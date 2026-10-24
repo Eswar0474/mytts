@@ -1,0 +1,34 @@
+node_modules/
+dist/
+coverage/
+.nyc_output/
+.vercel/
+.render/
+.opencode/
+# Keep chat attachments private even if the broader workspace ignore rule changes.
+.opencode/omnirush/inbox/chat-attachments/
+
+# Local secrets; keep the documented template tracked.
+.env
+SECURITY-REVIEW.md
+.env.*
+!.env.example
+
+# Local databases, quota data, logs, and temporary files.
+data/
+.audio-data/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS and editor metadata.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

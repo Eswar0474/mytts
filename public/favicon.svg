@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Sonora Voice Studio</title>
+  <rect width="64" height="64" rx="14" fill="#0a0b0e"/>
+  <circle cx="32" cy="32" r="21" fill="#e7bd91"/>
+  <path d="M11 32a21 21 0 0 1 42 0Z" fill="#17181c"/>
+  <circle cx="32" cy="32" r="21" fill="none" stroke="#c99a6b" stroke-width="2"/>
+</svg>

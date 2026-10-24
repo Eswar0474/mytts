@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: sonora-studio
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: TRUST_PROXY
+        value: "1"
+      # Change this when deploying on a different production domain.
+      - key: SITE_URL
+        value: "https://sonora.rawse.in"
+      - key: GOOGLE_SITE_VERIFICATION
+        value: "WKcjy6CTtDshP2gWiMossBKitVn-jvi6uJPzpugyFSE"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_USERNAMES
+        sync: false
+      - key: DAILY_QUOTA_SECRET
+        generateValue: true
+      # Supabase PostgreSQL connection string (Supabase Dashboard -> Project Settings -> Database)
+      # Supports either Supavisor Pooler (port 6543 / 5432) or Direct connection (port 5432).
+      - key: DATABASE_URL
+        sync: false
+      # Supabase certificate chains include intermediate/self-signed certificates.
+      # Keep TLS encryption enabled while disabling strict root certificate chain verification.
+      - key: DATABASE_SSL_REJECT_UNAUTHORIZED
+        value: "false"
